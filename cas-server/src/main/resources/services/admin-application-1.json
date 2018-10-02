@@ -1,0 +1,8 @@
+{
+    "@class" : "org.apereo.cas.services.RegexRegisteredService",
+    "serviceId" : "^https://localhost:8443/",
+    "name" : "Evidentiranje ličnih dokumenata",
+    "id" : 1,
+    "evaluationOrder" : 1,
+    "logoutURL":"https://localhost:8443/logout"
+  }
