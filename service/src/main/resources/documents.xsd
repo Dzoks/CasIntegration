@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://dzoks.rs/service/soap"
+           xmlns:tns="http://dzoks.rs/service/soap" elementFormDefault="qualified">
+
+    <xs:element name="GetDocumentsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="date" type="xs:long"/>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="token" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetDocumentsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="documents" type="tns:documentsListSOAP"/>
+                <xs:element name="error" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="documentsListSOAP">
+        <xs:sequence>
+            <xs:element name="documents" type="tns:documentSOAP" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="documentSOAP">
+        <xs:sequence>
+            <xs:element name="birthDate" type="xs:long"/>
+            <xs:element name="categories" type="tns:drivingCategorySOAP" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="citizenship" type="xs:string" minOccurs="0"/>
+            <xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="dateOfIssue" type="xs:long" minOccurs="0"/>
+            <xs:element name="documentType" type="xs:string" minOccurs="0"/>
+            <xs:element name="entityCitizenship" type="xs:string" minOccurs="0"/>
+            <xs:element name="fname" type="xs:string" minOccurs="0"/>
+            <xs:element name="id" type="xs:int" minOccurs="0"/>
+            <xs:element name="issuingAuthority" type="xs:string" minOccurs="0"/>
+            <xs:element name="jmbg" type="xs:string" minOccurs="0"/>
+            <xs:element name="lname" type="xs:string" minOccurs="0"/>
+            <xs:element name="male" type="xs:byte" minOccurs="0"/>
+            <xs:element name="placeOfBirth" type="xs:string" minOccurs="0"/>
+            <xs:element name="residence" type="xs:string" minOccurs="0"/>
+            <xs:element name="serialNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="validUntil" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="drivingCategorySOAP">
+        <xs:sequence>
+            <xs:element name="category" type="xs:string" minOccurs="0"/>
+            <xs:element name="examDate" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
