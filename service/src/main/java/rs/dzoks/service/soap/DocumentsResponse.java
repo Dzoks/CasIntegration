@@ -8,6 +8,8 @@
 
 package rs.dzoks.service.soap;
 
+import com.google.gson.annotations.Expose;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -34,17 +36,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "documents",
-        "error"
-})
-@XmlRootElement(name = "GetDocumentsResponse")
-public class GetDocumentsResponse {
+public class DocumentsResponse {
 
-    @XmlElement(required = true)
+    @Expose
     protected DocumentsListSOAP documents;
-    @XmlElement(required = true)
+    @Expose
     protected String error;
     public void setError(String value) {
         this.error = value;

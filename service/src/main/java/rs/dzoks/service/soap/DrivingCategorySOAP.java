@@ -8,6 +8,8 @@
 
 package rs.dzoks.service.soap;
 
+import com.google.gson.annotations.Expose;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -33,14 +35,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "drivingCategorySOAP", propOrder = {
-    "category",
-    "examDate"
-})
 public class DrivingCategorySOAP {
 
+    @Expose
     protected String category;
+    @Expose
     protected long examDate;
 
     /**

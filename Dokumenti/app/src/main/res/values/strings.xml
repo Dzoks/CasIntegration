@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Dokumenti</string>
+    <string name="protocol">https</string>
+    <string name="rest_path">/</string>
+    <string name="ip">192.168.43.171</string>
+    <string name="port">7443</string>
+    <string name="soap_path">ws</string>
+    <string name="generate_token">Generišite token</string>
+    <string name="show_documents">Prikažite dokumente</string>
+</resources>

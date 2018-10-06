@@ -1,5 +1,6 @@
 package rs.dzoks.service.controller;
 
+import com.google.gson.Gson;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -39,22 +40,30 @@ public class DocumentsEndpoint {
 
     @PayloadRoot(namespace = "http://dzoks.rs/service/soap", localPart = "GetDocumentsRequest")
     @ResponsePayload
-    public GetDocumentsResponse processRequest(@RequestPayload GetDocumentsRequest request) {
-        GetDocumentsResponse response = new GetDocumentsResponse();
+    public GetDocumentResponse processRequest(@RequestPayload GetDocumentsRequest request) {
+        Gson gson=new Gson();
+        DocumentsResponse response = new DocumentsResponse();
+        GetDocumentResponse responseEnvelope=new GetDocumentResponse();
         response.setDocuments(new DocumentsListSOAP());
         List<DocumentType> documentTypeList=documentTypeRepository.findAll();
         List<DrivingCategory> drivingCategories=drivingCategoryRepository.findAll();
         User user=userRepository.getFirstByUsernameAndTokenAndTokenExpirationTimeAfter(request.getUsername(),request.getToken(), Timestamp.valueOf(LocalDateTime.now()));
         if (user==null || !BCrypt.checkpw(request.getPassword(),user.getPassword())){
             response.setError("Unauthorized");
-            return response;
+            responseEnvelope.setDocuments(gson.toJson(response,DocumentsResponse.class));
+            return responseEnvelope;
         }
         List<Document> allDocuments=documentRepository.getAllByDateOfIssue(new Timestamp(request.getDate()));
+        if (user.getAdministrator().equals((byte)0)){
+            allDocuments.removeIf(d->!d.getUserId().equals(user.getId()));
+        }
         for (Document document:allDocuments){
             User documentUser=userRepository.findById(document.getUserId()).orElse(null);
             if (documentUser==null){
                 response.setError("Bad data");
-                return response;
+                responseEnvelope.setDocuments(gson.toJson(response,DocumentsResponse.class));
+
+                return responseEnvelope;
             }
             List<DocumentHasDrivingCategory> cats=null;
             if (document.getDocumentTypeId().equals(drivingLicenceId)){
@@ -64,6 +73,8 @@ public class DocumentsEndpoint {
             response.getDocuments().getDocuments().add(documentSOAP);
         }
         System.out.println("DOCUMENTS"+response.getDocuments().getDocuments().size());
-        return response;
+
+        responseEnvelope.setDocuments(gson.toJson(response,DocumentsResponse.class));
+        return responseEnvelope;
     }
 }

@@ -9,4 +9,5 @@ import java.util.List;
 public interface DocumentRepository extends JpaRepository<Document,Integer> {
 
     List<Document> getAllByDateOfIssue(Timestamp data);
+    List<Document>  getAllByUserId(Integer userId);
 }

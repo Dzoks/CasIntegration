@@ -6,17 +6,12 @@
 //
 
 
-package rs.dzoks.service.soap;
+package rs.dzoks.dokumenti.model;
 
 import com.google.gson.annotations.Expose;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
 
 public class DocumentSOAP {
     @Expose
@@ -56,7 +51,6 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the birthDate property.
-     * 
      */
     public long getBirthDate() {
         return birthDate;
@@ -64,7 +58,6 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the birthDate property.
-     * 
      */
     public void setBirthDate(long value) {
         this.birthDate = value;
@@ -72,25 +65,23 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the categories property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the categories property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getCategories().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link DrivingCategorySOAP }
-     * 
-     * 
      */
     public List<DrivingCategorySOAP> getCategories() {
         if (categories == null) {
@@ -101,11 +92,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the citizenship property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCitizenship() {
         return citizenship;
@@ -113,11 +102,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the citizenship property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCitizenship(String value) {
         this.citizenship = value;
@@ -125,11 +112,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the countryCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCountryCode() {
         return countryCode;
@@ -137,11 +122,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the countryCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCountryCode(String value) {
         this.countryCode = value;
@@ -149,11 +132,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the dateOfIssue property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getDateOfIssue() {
         return dateOfIssue;
@@ -161,11 +142,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the dateOfIssue property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setDateOfIssue(Long value) {
         this.dateOfIssue = value;
@@ -173,11 +152,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the documentType property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDocumentType() {
         return documentType;
@@ -185,11 +162,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the documentType property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDocumentType(String value) {
         this.documentType = value;
@@ -197,11 +172,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the entityCitizenship property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getEntityCitizenship() {
         return entityCitizenship;
@@ -209,11 +182,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the entityCitizenship property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setEntityCitizenship(String value) {
         this.entityCitizenship = value;
@@ -221,11 +192,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the fname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFname() {
         return fname;
@@ -233,11 +202,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the fname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFname(String value) {
         this.fname = value;
@@ -245,11 +212,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the id property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is
+     * {@link Integer }
      */
     public Integer getId() {
         return id;
@@ -257,11 +222,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Integer }
      */
     public void setId(Integer value) {
         this.id = value;
@@ -269,11 +232,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the issuingAuthority property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getIssuingAuthority() {
         return issuingAuthority;
@@ -281,11 +242,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the issuingAuthority property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setIssuingAuthority(String value) {
         this.issuingAuthority = value;
@@ -293,11 +252,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the jmbg property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getJmbg() {
         return jmbg;
@@ -305,11 +262,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the jmbg property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setJmbg(String value) {
         this.jmbg = value;
@@ -317,11 +272,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the lname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLname() {
         return lname;
@@ -329,11 +282,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the lname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLname(String value) {
         this.lname = value;
@@ -341,11 +292,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the male property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Byte }
-     *     
+     *
+     * @return possible object is
+     * {@link Byte }
      */
     public Byte getMale() {
         return male;
@@ -353,11 +302,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the male property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Byte }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Byte }
      */
     public void setMale(Byte value) {
         this.male = value;
@@ -365,11 +312,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the placeOfBirth property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPlaceOfBirth() {
         return placeOfBirth;
@@ -377,11 +322,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the placeOfBirth property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPlaceOfBirth(String value) {
         this.placeOfBirth = value;
@@ -389,11 +332,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the residence property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getResidence() {
         return residence;
@@ -401,11 +342,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the residence property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setResidence(String value) {
         this.residence = value;
@@ -413,11 +352,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the serialNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSerialNumber() {
         return serialNumber;
@@ -425,11 +362,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the serialNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSerialNumber(String value) {
         this.serialNumber = value;
@@ -437,11 +372,9 @@ public class DocumentSOAP {
 
     /**
      * Gets the value of the validUntil property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getValidUntil() {
         return validUntil;
@@ -449,11 +382,9 @@ public class DocumentSOAP {
 
     /**
      * Sets the value of the validUntil property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setValidUntil(Long value) {
         this.validUntil = value;
