@@ -7,4 +7,11 @@
     <string name="soap_path">ws</string>
     <string name="generate_token">Generišite token</string>
     <string name="show_documents">Prikažite dokumente</string>
+    <string name="send">Pošaljite</string>
+    <string name="jmbg">JMBG</string>
+    <string name="date">Datum</string>
+    <string name="search_text">Pretraga po</string>
+    <string name="token">Token</string>
+    <string name="password">Lozinka</string>
+    <string name="username">Korisničko ime</string>
 </resources>

@@ -12,6 +12,7 @@ public class GetInfo {
     @Expose
     private String jmbg;
 
+
     public GetInfo() {
 
     }

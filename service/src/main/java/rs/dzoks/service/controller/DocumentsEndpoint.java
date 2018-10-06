@@ -49,7 +49,7 @@ public class DocumentsEndpoint {
         List<DrivingCategory> drivingCategories=drivingCategoryRepository.findAll();
         User user=userRepository.getFirstByUsernameAndTokenAndTokenExpirationTimeAfter(request.getUsername(),request.getToken(), Timestamp.valueOf(LocalDateTime.now()));
         if (user==null || !BCrypt.checkpw(request.getPassword(),user.getPassword())){
-            response.setError("Unauthorized");
+            response.setError("401");
             responseEnvelope.setDocuments(gson.toJson(response,DocumentsResponse.class));
             return responseEnvelope;
         }
@@ -60,7 +60,7 @@ public class DocumentsEndpoint {
         for (Document document:allDocuments){
             User documentUser=userRepository.findById(document.getUserId()).orElse(null);
             if (documentUser==null){
-                response.setError("Bad data");
+                response.setError("400");
                 responseEnvelope.setDocuments(gson.toJson(response,DocumentsResponse.class));
 
                 return responseEnvelope;
@@ -68,6 +68,7 @@ public class DocumentsEndpoint {
             List<DocumentHasDrivingCategory> cats=null;
             if (document.getDocumentTypeId().equals(drivingLicenceId)){
                 cats=documentHasDrivingCategoryRepository.getAllByDocumentId(document.getId());
+
             }
             DocumentSOAP documentSOAP= DocumentConverter.convertDocument(document,documentUser,cats,drivingCategories,documentTypeList);
             response.getDocuments().getDocuments().add(documentSOAP);

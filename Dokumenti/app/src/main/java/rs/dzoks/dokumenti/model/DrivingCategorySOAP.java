@@ -2,8 +2,10 @@ package rs.dzoks.dokumenti.model;
 
 import com.google.gson.annotations.Expose;
 
+import java.io.Serializable;
 
-public class DrivingCategorySOAP {
+
+public class DrivingCategorySOAP implements Serializable {
 
     @Expose
     protected String category;

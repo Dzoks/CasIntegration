@@ -11,4 +11,7 @@ public interface RestInterface {
 
     @POST("token")
     Call<ResponseBody> generateToken(@Body GetInfo getInfo);
+
+    @POST("documents")
+    Call<ResponseBody> getDocuments(@Body GetInfo getInfo);
 }

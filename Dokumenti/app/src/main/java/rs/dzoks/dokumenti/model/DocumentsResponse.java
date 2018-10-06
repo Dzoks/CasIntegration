@@ -10,6 +10,8 @@ package rs.dzoks.dokumenti.model;
 
 import com.google.gson.annotations.Expose;
 
+import java.io.Serializable;
+
 
 /**
  * <p>Java class for anonymous complex type.
@@ -28,7 +30,7 @@ import com.google.gson.annotations.Expose;
  * &lt;/complexType&gt;
  * </pre>
  */
-public class DocumentsResponse {
+public class DocumentsResponse implements Serializable {
 
     @Expose
     protected DocumentsListSOAP documents;

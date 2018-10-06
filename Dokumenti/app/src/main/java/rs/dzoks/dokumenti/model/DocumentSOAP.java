@@ -10,10 +10,11 @@ package rs.dzoks.dokumenti.model;
 
 import com.google.gson.annotations.Expose;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DocumentSOAP {
+public class DocumentSOAP implements Serializable {
     @Expose
     protected long birthDate;
     @Expose
