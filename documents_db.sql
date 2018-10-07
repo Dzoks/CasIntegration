@@ -160,7 +160,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'turjacanin.djordje@gmail.com','$2a$12$uBFJsDHk5hwnB27VkUO1w.tkhf.FOOlXgtFOyTbf9UN6vzuJfs7rS','1312995100035','Djordje','Turjacanin',1,'1995-12-13',1,'449DE6','2018-10-08 13:01:02',1,'Banja Luka'),(2,'etfbl.dzoks@gmail.com ','$2a$12$qaLTYaJZ816upfKZr8WlcOSu0uagpiVtPVAoqaBNjYnjNKLTF4Cj2','1111990100036','Marko','Milosevic',1,'1990-11-11',0,NULL,NULL,0,'Srbac');
+INSERT INTO `user` VALUES (1,'turjacanin.djordje@gmail.com','$2a$12$uBFJsDHk5hwnB27VkUO1w.tkhf.FOOlXgtFOyTbf9UN6vzuJfs7rS','1312995100035','Djordje','Turjacanin',1,'1995-12-13',1,'449DE6','2018-10-07 13:01:02',1,'Banja Luka'),(2,'etfbl.dzoks@gmail.com ','$2a$12$qaLTYaJZ816upfKZr8WlcOSu0uagpiVtPVAoqaBNjYnjNKLTF4Cj2','1111990100036','Marko','Milosevic',1,'1990-11-11',0,NULL,NULL,0,'Srbac');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -173,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-07 21:49:49
+-- Dump completed on 2018-10-07 21:55:40
