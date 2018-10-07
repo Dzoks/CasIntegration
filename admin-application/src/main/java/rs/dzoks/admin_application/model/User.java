@@ -21,6 +21,8 @@ public class User {
     private String token;
     private Timestamp tokenExpirationTime;
     private Byte loggedIn;
+    private String placeOfBirth;
+
 
     @Id
     @Column(name = "id", nullable = false)
@@ -144,6 +146,17 @@ public class User {
 
     public void setLoggedIn(Byte loggedIn) {
         this.loggedIn = loggedIn;
+    }
+
+
+    @Basic
+    @Column(name = "place_of_birth", nullable = false, length = 45)
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
+    }
+
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
     }
     @Override
     public boolean equals(Object o) {

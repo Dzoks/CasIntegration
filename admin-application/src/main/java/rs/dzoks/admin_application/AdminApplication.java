@@ -1,13 +1,11 @@
 package rs.dzoks.admin_application;
 
-import net.unicon.cas.client.configuration.CasClientConfigurerAdapter;
 import net.unicon.cas.client.configuration.EnableCasClient;
 import org.jasig.cas.client.session.SingleSignOutFilter;
 import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;

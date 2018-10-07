@@ -1,5 +1,5 @@
 var panel = {id: "empty"};
-
+let userMap=[];
 var init = function () {
     webix.Date.startOnMonday = true;
     webix.ui(panel);
@@ -20,7 +20,8 @@ var init = function () {
 
             showUnauthorized();
         }else{
-            window.location.reload();
+            console.log(err);
+     //       window.location.reload();
         }
 
     });
@@ -40,6 +41,29 @@ const showApp=function(userData){
     var main = webix.copy(mainLayout);
     webix.ui(main, panel);
     panel = $$("mainLayout");
+    webix.ajax().get("document-type").then(res=>{
+        $$("documentType").define("options",res.json());
+        $$("documentType").refresh();
+    });
+    webix.ajax().get("user").then(res=>{
+        const users=res.json();
+        userMap=[];
+
+        users.forEach(user=>{
+            user.value=`${user.jmbg} - ${user.fname} ${user.lname}`;
+            userMap[user.id]=user;
+        });
+        $$("userId").define("options",users);
+        $$("userId").refresh();
+    });
+    webix.ajax().get("driving-category").then(res=>{
+        categoryArray=res.json();
+        categoryMap=[];
+        categoryArray.forEach(cat=>{
+            categoryMap[cat.id]=cat.value;
+        });
+    });
+    $$("documentForm").hide();
 };
 
 //main call

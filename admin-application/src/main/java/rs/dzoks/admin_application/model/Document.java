@@ -1,7 +1,11 @@
 package rs.dzoks.admin_application.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -10,13 +14,11 @@ public class Document {
     private Integer id;
     private Integer documentTypeId;
     private Integer userId;
-    private byte[] photo;
     private String serialNumber;
-    private String placeOfBirth;
     private String residence;
     private String issuingAuthority;
-    private Date dateOfIssue;
-    private Date validUntil;
+    private Timestamp dateOfIssue;
+    private Timestamp validUntil;
     private String citizenship;
     private String entityCitizenship;
     private String countryCode;
@@ -53,16 +55,6 @@ public class Document {
     }
 
     @Basic
-    @Column(name = "photo", nullable = false)
-    public byte[] getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
-    }
-
-    @Basic
     @Column(name = "serial_number", nullable = false, length = 10)
     public String getSerialNumber() {
         return serialNumber;
@@ -72,15 +64,6 @@ public class Document {
         this.serialNumber = serialNumber;
     }
 
-    @Basic
-    @Column(name = "place_of_birth", nullable = false, length = 45)
-    public String getPlaceOfBirth() {
-        return placeOfBirth;
-    }
-
-    public void setPlaceOfBirth(String placeOfBirth) {
-        this.placeOfBirth = placeOfBirth;
-    }
 
     @Basic
     @Column(name = "residence", nullable = false, length = 45)
@@ -104,21 +87,23 @@ public class Document {
 
     @Basic
     @Column(name = "date_of_issue", nullable = false)
-    public Date getDateOfIssue() {
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    public Timestamp getDateOfIssue() {
         return dateOfIssue;
     }
 
-    public void setDateOfIssue(Date dateOfIssue) {
+    public void setDateOfIssue(Timestamp dateOfIssue) {
         this.dateOfIssue = dateOfIssue;
     }
 
     @Basic
     @Column(name = "valid_until", nullable = false)
-    public Date getValidUntil() {
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    public Timestamp getValidUntil() {
         return validUntil;
     }
 
-    public void setValidUntil(Date validUntil) {
+    public void setValidUntil(Timestamp validUntil) {
         this.validUntil = validUntil;
     }
 
@@ -160,9 +145,8 @@ public class Document {
         return Objects.equals(id, document.id) &&
                 Objects.equals(documentTypeId, document.documentTypeId) &&
                 Objects.equals(userId, document.userId) &&
-                Arrays.equals(photo, document.photo) &&
                 Objects.equals(serialNumber, document.serialNumber) &&
-                Objects.equals(placeOfBirth, document.placeOfBirth) &&
+
                 Objects.equals(residence, document.residence) &&
                 Objects.equals(issuingAuthority, document.issuingAuthority) &&
                 Objects.equals(dateOfIssue, document.dateOfIssue) &&
@@ -174,8 +158,8 @@ public class Document {
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(id, documentTypeId, userId, serialNumber, placeOfBirth, residence, issuingAuthority, dateOfIssue, validUntil, citizenship, entityCitizenship, countryCode);
-        result = 31 * result + Arrays.hashCode(photo);
+        int result = Objects.hash(id, documentTypeId, userId, serialNumber, residence, issuingAuthority, dateOfIssue, validUntil, citizenship, entityCitizenship, countryCode);
+        result = 31 * result ;
         return result;
     }
 }
