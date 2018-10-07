@@ -2,66 +2,62 @@ let errorLayout={
     id:"errorLayout",
     rows:[
         {
-            height:50
+            height:50,
         },
         {
-            rows:[
+            cols:[
                 {
-                    height:50,
+
                 },
                 {
-                  cols:[
-                      {
+                    rows:[
+                        {
+                            view:"template",
+                            template:`<h4>Molimo unesite vaš token da nastavite sa radom:</h4>`,
+                            height:60,
+                            borderless: true
+                        },
+                        {
+                            view: "form",
+                            id: "tokenForm",
+                            borderless: true,
+                            width: 510,
+                            elementsConfig: {
+                                labelWidth: 140,
+                                bottomPadding: 18
+                            },
+                            cols: [
+                                {
+                                    id: "token",
+                                    name: "token",
+                                    view: "text",
+                                    label: "Token:",
+                                    invalidMessage: "Token je obavezan!",
+                                    required: true,
 
-                      },
-                      {
-                          rows:[
-                              {
-                                  view:"template",
-                                  template:`<h4>Molimo unesite vaš token da nastavite sa radom:</h4>`,
-                                  height:60,
-                                  borderless: true
-                              },
-                              {
-                                  view: "form",
-                                  id: "tokenForm",
-                                  borderless: true,
-                                  width: 510,
+                                },
+                                {
+                                    id: "loginBtn",
+                                    view: "button",
+                                    value: "Prijavite se",
+                                    type: "form",
+                                    click: "errorLayout.sendToken",
+                                    align: "right",
+                                    hotkey: "enter",
+                                    width: 150,
 
-                                  cols: [
-                                      {
-                                          id: "token",
-                                          name: "token",
-                                          view: "text",
-                                          label: "Token:",
-                                          invalidMessage: "Token je obavezan!",
-                                          required: true,
-
-                                      },
-                                      {
-                                          id: "loginBtn",
-                                          view: "button",
-                                          value: "Prijavite se",
-                                          type: "form",
-                                          click: "errorLayout.sendToken",
-                                          align: "right",
-                                          hotkey: "enter",
-                                          width: 150,
-
-                                      }
-                                  ]
-                              },
-                          ]
-                      },
-                      {
-
-                      }
-                  ]
+                                }
+                            ]
+                        },
+                    ]
                 },
                 {
 
                 }
             ]
+        },
+        {
+
         }
     ],
     sendToken(){
@@ -71,7 +67,7 @@ let errorLayout={
                 userData=res.json();
                 showApp(userData);
             }).catch(err=>{
-                alert(err.responseText);
+                webix.message("Token nije validan!");
             });
         }
     }

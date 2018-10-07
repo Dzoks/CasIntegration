@@ -7,6 +7,7 @@
         <class>rs.dzoks.client_application.model.DocumentTypeHasDrivingCategory</class>
         <class>rs.dzoks.client_application.model.DrivingCategory</class>
         <class>rs.dzoks.client_application.model.User</class>
+        <class>rs.dzoks.client_application.model.DocumentHasDrivingCategory</class>
         <properties>
             <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/documents_db"/>
             <property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>

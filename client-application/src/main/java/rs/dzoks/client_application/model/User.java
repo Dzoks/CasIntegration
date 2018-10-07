@@ -22,6 +22,7 @@ public class User {
     private String token;
     private Timestamp tokenExpirationTime;
     private Byte loggedIn;
+    private String placeOfBirth;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -143,6 +144,16 @@ public class User {
         this.loggedIn = loggedIn;
     }
 
+    @Basic
+    @Column(name = "place_of_birth", nullable = false, length = 45)
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
+    }
+
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -159,11 +170,12 @@ public class User {
                 Objects.equals(administrator, user.administrator) &&
                 Objects.equals(token, user.token) &&
                 Objects.equals(tokenExpirationTime, user.tokenExpirationTime) &&
-                Objects.equals(loggedIn, user.loggedIn);
+                Objects.equals(loggedIn, user.loggedIn) &&
+                Objects.equals(placeOfBirth, user.placeOfBirth);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, password, jmbg, fname, lname, male, birthDate, administrator, token, tokenExpirationTime, loggedIn);
+        return Objects.hash(id, username, password, jmbg, fname, lname, male, birthDate, administrator, token, tokenExpirationTime, loggedIn, placeOfBirth);
     }
 }

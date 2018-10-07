@@ -30,6 +30,14 @@ const showApp=function(userData){
     var main = webix.copy(mainLayout);
     webix.ui(main, panel);
     panel = $$("mainLayout");
+    webix.ajax().get("document").then(res=>{
+        const jsObject=res.json();
+        const documentArray=[];
+        jsObject.documents.forEach(el=>{
+            documentArray.push(el);
+        });
+        $$("documentsDT").parse(documentArray);
+    });
 };
 
 //main call

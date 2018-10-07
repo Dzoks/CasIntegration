@@ -12,7 +12,7 @@ var scriptsToLoad = [
     {
         "section": "common",
         "path": "js/common/",
-        "files": ["properties"]
+        "files": ["util","properties"]
     },
     {
         "section": "views",

@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class DocumentTypeHasDrivingCategoryPK implements Serializable {
+public class DocumentHasDrivingCategoryPK implements Serializable {
     private Integer drivingCategoryId;
     private Integer documentId;
 
@@ -33,7 +33,7 @@ public class DocumentTypeHasDrivingCategoryPK implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DocumentTypeHasDrivingCategoryPK that = (DocumentTypeHasDrivingCategoryPK) o;
+        DocumentHasDrivingCategoryPK that = (DocumentHasDrivingCategoryPK) o;
         return Objects.equals(drivingCategoryId, that.drivingCategoryId) &&
                 Objects.equals(documentId, that.documentId);
     }

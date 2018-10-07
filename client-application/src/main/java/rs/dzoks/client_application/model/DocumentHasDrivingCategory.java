@@ -1,16 +1,16 @@
 package rs.dzoks.client_application.model;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "document_type_has_driving_category", schema = "documents_db", catalog = "")
-@IdClass(DocumentTypeHasDrivingCategoryPK.class)
-public class DocumentTypeHasDrivingCategory {
+@Table(name = "document_has_driving_category", schema = "documents_db", catalog = "")
+@IdClass(DocumentHasDrivingCategoryPK.class)
+public class DocumentHasDrivingCategory {
     private Integer drivingCategoryId;
     private Integer documentId;
-    private Date examDate;
+    private Timestamp examDate;
 
     @Id
     @Column(name = "driving_category_id", nullable = false)
@@ -34,11 +34,11 @@ public class DocumentTypeHasDrivingCategory {
 
     @Basic
     @Column(name = "exam_date", nullable = false)
-    public Date getExamDate() {
+    public Timestamp getExamDate() {
         return examDate;
     }
 
-    public void setExamDate(Date examDate) {
+    public void setExamDate(Timestamp examDate) {
         this.examDate = examDate;
     }
 
@@ -46,7 +46,7 @@ public class DocumentTypeHasDrivingCategory {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DocumentTypeHasDrivingCategory that = (DocumentTypeHasDrivingCategory) o;
+        DocumentHasDrivingCategory that = (DocumentHasDrivingCategory) o;
         return Objects.equals(drivingCategoryId, that.drivingCategoryId) &&
                 Objects.equals(documentId, that.documentId) &&
                 Objects.equals(examDate, that.examDate);
