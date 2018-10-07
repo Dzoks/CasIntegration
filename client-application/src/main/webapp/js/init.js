@@ -12,7 +12,7 @@ var scriptsToLoad = [
     {
         "section": "common",
         "path": "js/common/",
-        "files": ["util","properties"]
+        "files": ["util","properties","pdf/vfs_fonts","pdf/pdfmake.min"]
     },
     {
         "section": "views",

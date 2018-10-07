@@ -62,19 +62,15 @@ public class DocumentsEndpoint {
             if (documentUser==null){
                 response.setError("400");
                 responseEnvelope.setDocuments(gson.toJson(response,DocumentsResponse.class));
-
                 return responseEnvelope;
             }
             List<DocumentHasDrivingCategory> cats=null;
             if (document.getDocumentTypeId().equals(drivingLicenceId)){
                 cats=documentHasDrivingCategoryRepository.getAllByDocumentId(document.getId());
-
             }
             DocumentSOAP documentSOAP= DocumentConverter.convertDocument(document,documentUser,cats,drivingCategories,documentTypeList);
             response.getDocuments().getDocuments().add(documentSOAP);
         }
-        System.out.println("DOCUMENTS"+response.getDocuments().getDocuments().size());
-
         responseEnvelope.setDocuments(gson.toJson(response,DocumentsResponse.class));
         return responseEnvelope;
     }

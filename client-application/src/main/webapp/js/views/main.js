@@ -350,7 +350,6 @@ let mainLayout={
         if (object.categories.length>0){
             object.categories.forEach(c=>c.examDate=new Date(c.examDate));
         }
-        console.log(object);
         webix.ui(webix.copy(mainLayout.detailsPopup)).show();
         switch (object.documentType) {
             case "Lična karta":
@@ -369,9 +368,35 @@ let mainLayout={
         }
         $$("documentForm").setValues(object);
     },
+
     saveDocument(){
-        webix.toPNG($$("documentForm"));
+        webix.toPNG($$("documentForm"),{download:false}).then(blob=>{
+            var reader = new FileReader();
+            reader.readAsDataURL(blob);
+            reader.onloadend = function() {
+                var base64data = reader.result;
+                    var docDefinition = {
+                        pageSize: {height: 410, width: 1310},
+                        content: [
+                            {
+                                image: base64data,
+                            }
+                        ]
+                    };
+                    pdfMake.createPdf(docDefinition).download('Dokument.pdf');
+            }
+
+
+        }).catch(err=>console.log(err));
 
 
     }
+};
+var converterEngine = function (input) { // fn BLOB => Binary => Base64 ?
+    var uInt8Array = new Uint8Array(input),
+        i = uInt8Array.length;
+    var biStr = []; //new Array(i);
+    while (i--) { biStr[i] = String.fromCharCode(uInt8Array[i]);  }
+    var base64 = window.btoa(biStr.join(''));
+    return base64;
 };

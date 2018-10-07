@@ -57,7 +57,6 @@ let errorLayout={
             ]
         },
         {
-
         }
     ],
     sendToken(){
